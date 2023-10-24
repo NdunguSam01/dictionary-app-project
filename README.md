@@ -44,3 +44,7 @@ Click the link below to view the live page of the project
 
 ## Author
 [Samuel Muigai](https://github.com/NdunguSam01)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
