@@ -72,7 +72,7 @@ function fetchDictionaryData(inputFieldValue)
             })
 }
 
-//Function that will be used to create the result header section based on the word being searched
+//Function that will be used to get the result header section and modify the innerHTML based on the word being searched
 function renderResultHeader(word, phonetic, audio)
 {
     //Getting the result-header div from the DOM and setting the innerHTML content to it
@@ -80,8 +80,6 @@ function renderResultHeader(word, phonetic, audio)
     resultHeader.innerHTML=
     `
     <h2>${word}</h2>
-    <p>Pronounciation <span>//${phonetic}//</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
+    <p>Pronounciation: <span>${phonetic}</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
     `
-    console.log(resultHeader)
-    document.appendChild(resultHeader)
 }
