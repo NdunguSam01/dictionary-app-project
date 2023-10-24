@@ -1,0 +1,83 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body 
+{
+    background-color: lightblue;
+}
+h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 2em;
+}
+form
+{
+   padding: 20px;
+   text-align: center;
+}
+form input[type=search]
+{
+    padding: 20px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+form input[type=search]:focus
+{
+    border-bottom: 2px solid black;
+}
+form input[type=search]::placeholder
+{
+    font-size: 1.3em;
+    color: inherit;
+    margin: 0;
+}
+form input[type=submit]
+{
+    margin-left: 15px;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1em;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+div#search-results
+{
+    padding-left: 20%;
+}
+div#search-results .result
+{
+    margin: 10px;
+    padding: 25px;
+}
+div#search-results .result:hover
+{
+    border-left: 2px solid blue;
+}
+div#search-results .result .fa
+{
+    font-size: 1.4em;
+    padding-left: 30px;
+}
+div#search-results .result h2
+{
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+div#search-results .result h2, div#search-results .result p
+{
+    font-size: 1.4em;
+    padding-left: 20px;
+    line-height: 2.5;
+    word-wrap: break-word;
+}
