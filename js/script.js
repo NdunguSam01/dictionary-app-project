@@ -53,18 +53,8 @@ function fetchDictionaryData(inputFieldValue)
                         //Destructuring the definitions object to get the definition and example in a sentence
                         let {definition, example}=definitions
 
-                        //Creating an object that will be used to pass the data that has been fetched from the API
-                        let wordDataObject=
-                        {
-                                partOfSpeech: partOfSpeech,
-                                definition: definition,
-                                example: example,
-                                synonyms: synonyms,
-                                antonyms: antonyms
-                        }
-
                         //Passing the collected data as a paramenter to a function that will render the results to the DOM
-                        renderWordResults(wordDataObject)
+                        renderWordResults(partOfSpeech, definition, example, synonyms, antonyms)
                     });
                 });
             })
@@ -94,17 +84,8 @@ function renderResultHeader(word, phonetic, audio)
 }
 
 //Function to add the fetch results e.g. part of speech, synonyms, example in a sentence to the DOM
-function renderWordResults(wordDataObject)
+function renderWordResults(partOfSpeech, definition, example, synonyms, antonyms)
 {
-    // console.log(wordDataObject)
-
-    let {partOfSpeech, definition, example, synonyms, antonyms}= wordDataObject
-    // console.log(partOfSpeech)
-    // console.log(definition)
-    // console.log(example)
-    // console.log(synonyms)
-    // console.log(antonyms)
-
     //Creating a child div that will be used to store the collected information and assigning a class to it
     const childResultDiv=document.createElement("div")
     childResultDiv.setAttribute("class", "result")
@@ -118,7 +99,7 @@ function renderWordResults(wordDataObject)
         <p>Synonyms: ${synonyms}</p>
         <p>Antonyms: ${antonyms}</p>
     `
-
+    
     //Getting the parent div where the child div will be appended to 
     const parentResultDiv=document.getElementById("search-results")
 
