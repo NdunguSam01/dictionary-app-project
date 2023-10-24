@@ -55,6 +55,7 @@ div#result-header
 {
     text-align: center;
     padding: 20px 0;
+    display: none;
 }
 div#search-results
 {

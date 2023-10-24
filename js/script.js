@@ -82,4 +82,6 @@ function renderResultHeader(word, phonetic, audio)
     <h2>${word}</h2>
     <p>Pronounciation: <span>${phonetic}</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
     `
+
+    resultHeader.style.display='block'
 }
