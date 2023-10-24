@@ -66,7 +66,6 @@ div#search-results
 }
 div#search-results > div
 {
-    border: 2px solid black;
     margin: 10px;
 }
 div#search-results .result:hover
