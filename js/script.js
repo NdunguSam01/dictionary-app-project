@@ -32,8 +32,12 @@ function fetchDictionaryData(inputFieldValue)
 
     //Fetching data from the API
     fetch(fetchURL)
-        .then(response => 
+        .then(response => response.json())
+        .then(wordsData=>
             {
-                console.log(response.json())
+                wordsData.forEach(wordData => 
+                {
+                    console.log(wordData)    
+                });
             })
 }
