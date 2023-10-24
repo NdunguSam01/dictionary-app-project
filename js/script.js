@@ -1,13 +1,11 @@
 //Declaring the input field as a global variable since it will be used multiple times
 let inputField=document.getElementById("search") 
 
-//
-
 //Adding an event listener to the DOM so that when it is loaded, the input field is automatically focused
 document.addEventListener("DOMContentLoaded", ()=>
 {
     inputField.focus()
-})
+}) 
 
 //Getting the form from the DOM and attaching a submit event to it
 const form=document.querySelector("form")
@@ -66,7 +64,7 @@ function fetchDictionaryData(inputFieldValue)
                         }
 
                         //Passing the collected data as a paramenter to a function that will render the results to the DOM
-                        // renderWordResults(wordDataObject)
+                        renderWordResults(wordDataObject)
                     });
                 });
             })
@@ -82,7 +80,7 @@ function renderResultHeader(word, phonetic, audio)
     <h2>${word}</h2>
     <p>Pronounciation: <span>${phonetic}</span> <i class="fa fa-volume-up" id="audioBtn"><audio src="${audio}" id="audio"></audio></i></p>
     `
-    
+
     //Fetching and adding an event listener to the volume up icon
     const audioBtn=document.getElementById("audioBtn")
     audioBtn.addEventListener("click", ()=>
@@ -93,4 +91,37 @@ function renderResultHeader(word, phonetic, audio)
     })
 
     resultHeader.style.display='block'
+}
+
+//Function to add the fetch results e.g. part of speech, synonyms, example in a sentence to the DOM
+function renderWordResults(wordDataObject)
+{
+    // console.log(wordDataObject)
+
+    let {partOfSpeech, definition, example, synonyms, antonyms}= wordDataObject
+    // console.log(partOfSpeech)
+    // console.log(definition)
+    // console.log(example)
+    // console.log(synonyms)
+    // console.log(antonyms)
+
+    //Creating a child div that will be used to store the collected information and assigning a class to it
+    const childResultDiv=document.createElement("div")
+    childResultDiv.setAttribute("class", "result")
+
+    //Setting the innerHTML of the child div
+    childResultDiv.innerHTML=
+    `
+        <h2>Part of speech: ${partOfSpeech}</h2>
+        <p>Definition: ${definition}</p>
+        <p>Example: ${example}</p>
+        <p>Synonyms: ${synonyms}</p>
+        <p>Antonyms: ${antonyms}</p>
+    `
+
+    //Getting the parent div where the child div will be appended to 
+    const parentResultDiv=document.getElementById("search-results")
+
+    //Appending the child div to the parent div
+    parentResultDiv.appendChild(childResultDiv)
 }
