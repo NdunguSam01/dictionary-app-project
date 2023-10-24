@@ -6,11 +6,13 @@
 }
 body 
 {
-    background-color: lightblue;
+    background-color: rgb(53, 52, 52);
+    color: #fff;
 }
 h1
 {
     text-align: center;
+    text-decoration: underline;
     text-transform: uppercase;
     padding: 15px;
     font-size: 2em;
@@ -29,20 +31,20 @@ form input[type=search]
 }
 form input[type=search]:focus
 {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
 }
 form input[type=search]::placeholder
 {
     font-size: 1.3em;
-    color: inherit;
+    color: #fff;
     margin: 0;
 }
 form input[type=submit]
 {
     margin-left: 15px;
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
+    color: inherit;
+    background-color: #5c5c5c;
+    border-color: #2572ff;
     display: inline-block;
     text-align: center;
     border: 1px solid transparent;
@@ -70,7 +72,7 @@ div#search-results > div
 }
 div#search-results .result:hover
 {
-    border-left: 2px solid blue;
+    border-left: 2px solid #fff;
 }
 div#search-results .result .fa
 {
