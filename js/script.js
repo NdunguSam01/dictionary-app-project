@@ -23,3 +23,10 @@ form.addEventListener("submit", event =>
     //Clearing the form data that was submitted
     form.reset()
 })
+
+//Declaring the function that will fetch data from the dictionary API
+function fetchDictionaryData(inputFieldValue)
+{
+    //Declaring the url that will be used to fetch data from the API
+    const fetchURL=`https://api.dictionaryapi.dev/api/v2/entries/en/${inputFieldValue}`
+}
