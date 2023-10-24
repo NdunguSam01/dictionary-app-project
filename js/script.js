@@ -13,6 +13,9 @@ form.addEventListener("submit", event =>
 {
     //Prevent the default behaviour of the from
     event.preventDefault()
+
+    //Clearing the innerHTML of the results section once a new phrase is submitted
+    document.getElementById("search-results").innerHTML=''
     
     //Getting the input field avalue from the form
     const inputFieldValue=inputField.value
