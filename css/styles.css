@@ -51,14 +51,21 @@ form input[type=submit]
     line-height: 1.5;
     border-radius: 0.25rem;
 }
+div.result-header
+{
+    text-align: center;
+    padding: 20px 0;
+}
 div#search-results
 {
-    padding-left: 20%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    gap: 10px;
 }
-div#search-results .result
+div#search-results > div
 {
     margin: 10px;
-    padding: 25px;
 }
 div#search-results .result:hover
 {
@@ -69,12 +76,12 @@ div#search-results .result .fa
     font-size: 1.4em;
     padding-left: 30px;
 }
-div#search-results .result h2
+div.result-header h2, div#search-results .result h2
 {
     text-transform: uppercase;
     text-decoration: underline;
 }
-div#search-results .result h2, div#search-results .result p
+div.result-header h2, div.result-header p, div#search-results .result h2, div#search-results .result p
 {
     font-size: 1.4em;
     padding-left: 20px;
