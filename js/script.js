@@ -49,10 +49,30 @@ function fetchDictionaryData(inputFieldValue)
                     {
                         //Destructuring the definitions object to get the definition and example in a sentence
                         let {definition, example}=definitions
-                        
+
+                        //Creating an object that will be used to pass the data that has been fetched from the API
+                        let wordDataObject=
+                        {
+                                partOfSpeech: partOfSpeech,
+                                definition: definition,
+                                example: example,
+                                synonyms: synonyms,
+                                antonyms: antonyms
+                        }
+
                         //Passing the collected data as a paramenter to a function that will render the results to the DOM
-                        renderWordResults(word, phonetic, audio, partOfSpeech, definition, example, synonyms, antonyms)
+                        renderWordResults(word, phonetic, audio, wordDataObject)
                     });
                 });
             })
+}
+
+function renderWordResults(word, phonetic, audio, wordDataObject)
+{
+    console.log(word)
+    console.log(phonetic)
+    console.log(audio)
+    console.log(wordDataObject)
+
+    
 }
