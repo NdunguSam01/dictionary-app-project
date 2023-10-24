@@ -1,6 +1,8 @@
 //Declaring the input field as a global variable since it will be used multiple times
 let inputField=document.getElementById("search") 
 
+//
+
 //Adding an event listener to the DOM so that when it is loaded, the input field is automatically focused
 document.addEventListener("DOMContentLoaded", ()=>
 {
@@ -73,13 +75,13 @@ function fetchDictionaryData(inputFieldValue)
 //Function that will be used to create the result header section based on the word being searched
 function renderResultHeader(word, phonetic, audio)
 {
-    //Creating the result-header div, adding a class and setting the innerHTML content to it
-    const resultHeader= document.createElement("div")
-    resultHeader.setAttribute("class", "result-header")
+    //Getting the result-header div from the DOM and setting the innerHTML content to it
+    const resultHeader= document.getElementById("result-header")
     resultHeader.innerHTML=
     `
     <h2>${word}</h2>
     <p>Pronounciation <span>//${phonetic}//</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
     `
     console.log(resultHeader)
+    document.appendChild(resultHeader)
 }
