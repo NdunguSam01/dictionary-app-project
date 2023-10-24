@@ -29,4 +29,11 @@ function fetchDictionaryData(inputFieldValue)
 {
     //Declaring the url that will be used to fetch data from the API
     const fetchURL=`https://api.dictionaryapi.dev/api/v2/entries/en/${inputFieldValue}`
+
+    //Fetching data from the API
+    fetch(fetchURL)
+        .then(response => 
+            {
+                console.log(response.json())
+            })
 }
