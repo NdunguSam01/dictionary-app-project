@@ -38,6 +38,9 @@ function fetchDictionaryData(inputFieldValue)
                 //Destructuring the fetch result to get the word, phonetic/promounciation, audio pronounciation link and the meanings array
                 let[{word, phonetic, phonetics: [{audio}], meanings}]=wordData
 
+                //Passing the word, pronounciation and audio that will be used to create the result header
+                renderResultHeader(word, phonetic, audio)
+
                 //Looping over the meanings array to get the part of speech, definition, synonyms and antonyms
                 meanings.forEach(meaning => 
                 {
@@ -61,18 +64,22 @@ function fetchDictionaryData(inputFieldValue)
                         }
 
                         //Passing the collected data as a paramenter to a function that will render the results to the DOM
-                        renderWordResults(word, phonetic, audio, wordDataObject)
+                        // renderWordResults(wordDataObject)
                     });
                 });
             })
 }
 
-function renderWordResults(word, phonetic, audio, wordDataObject)
+//Function that will be used to create the result header section based on the word being searched
+function renderResultHeader(word, phonetic, audio)
 {
-    console.log(word)
-    console.log(phonetic)
-    console.log(audio)
-    console.log(wordDataObject)
-
-    
+    //Creating the result-header div, adding a class and setting the innerHTML content to it
+    const resultHeader= document.createElement("div")
+    resultHeader.setAttribute("class", "result-header")
+    resultHeader.innerHTML=
+    `
+    <h2>${word}</h2>
+    <p>Pronounciation <span>//${phonetic}//</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
+    `
+    console.log(resultHeader)
 }

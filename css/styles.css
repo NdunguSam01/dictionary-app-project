@@ -56,6 +56,10 @@ div.result-header
     text-align: center;
     padding: 20px 0;
 }
+div.result-header
+{
+    text-transform: capitalize;
+}
 div#search-results
 {
     display: grid;
