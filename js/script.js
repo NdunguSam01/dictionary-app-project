@@ -80,8 +80,17 @@ function renderResultHeader(word, phonetic, audio)
     resultHeader.innerHTML=
     `
     <h2>${word}</h2>
-    <p>Pronounciation: <span>${phonetic}</span> <i class="fa fa-volume-up"><audio src="${audio}" id="audio"></audio></i></p>
+    <p>Pronounciation: <span>${phonetic}</span> <i class="fa fa-volume-up" id="audioBtn"><audio src="${audio}" id="audio"></audio></i></p>
     `
+    
+    //Fetching and adding an event listener to the volume up icon
+    const audioBtn=document.getElementById("audioBtn")
+    audioBtn.addEventListener("click", ()=>
+    {
+        //Getting the audio tag and playing it
+        const audioTag=document.getElementById("audio")
+        audioTag.play()
+    })
 
     resultHeader.style.display='block'
 }
