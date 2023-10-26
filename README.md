@@ -22,7 +22,10 @@ For this project, it has been deployed to GitHub pages so no additional software
 
 All the user needs is a web browser e.g. Google Chrome, Microsoft Edge, FireFox etc to run the project.
 
-Alternatively, one can decide to clone the project to their local machine and run it without visiting the website link. To do this, clone this project by:
+To view the project using the live link, click the link below
+[https://ndungusam01.github.io/dictionary-app-project/](https://ndungusam01.github.io/dictionary-app-project/)
+
+Alternatively, one can opt to clone the project to their local machine and run it without visiting the website link. To do this, clone this project by:
 
 1. Downloading the project zip folder by clicking this [link](https://api.dictionaryapi.dev/api/v2/entries/en/visit)
 2. Cloning the project into your local machine. To clone the project, use the steps below
@@ -35,12 +38,6 @@ git clone https://github.com/NdunguSam01/dictionary-app-project.git
 b. Navigate to the folder where you have cloned the project
 
 c. Click the index.html file which will be opened inside your machine's web browser
-
-## Link to Live Site
-
-Click the link below to view the live page of the project
-
-[https://ndungusam01.github.io/dictionary-app-project/](https://ndungusam01.github.io/dictionary-app-project/)
 
 ## Author
 [Samuel Muigai](https://github.com/NdunguSam01)
